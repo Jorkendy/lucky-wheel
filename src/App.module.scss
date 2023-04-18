@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+
+  .wheelWrapper {
+    height: 500px;
+    width: 440px;
+    display: flex;
+    justify-content: center;
+    background-image: url("./assets/images/play_button.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
