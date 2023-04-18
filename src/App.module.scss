@@ -1,14 +1,37 @@
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./assets/images/background_1.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .text {
+    position: absolute;
+    top: 0;
+
+    @media only screen and (max-width: 600px) {
+    }
+
+    @media only screen and (min-width: 600px) {}
+
+    @media only screen and (min-width: 768px) {
+      max-width: 80%;
+    }
+
+    @media only screen and (min-width: 992px) {
+      max-width: 100%;
+    }
+  }
 
   .wheelWrapper {
-    height: 500px;
-    width: 440px;
-    display: flex;
-    justify-content: center;
-    background-image: url("./assets/images/play_button.png");
+    background-image: url("./assets/images/button_3.png");
     background-repeat: no-repeat;
     background-position: center;
+    height: 500px;
+    width: 500px;
   }
 }

@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 import weightedRandom from "../utils/weightedRandom";
 import Swal from "sweetalert2";
-import "sweetalert2/src/sweetalert2.scss";
-import axios from "axios";
+import button from "../assets/images/button_2.png";
 
 let theWheel: any;
 declare let Winwheel: any;
@@ -13,6 +12,7 @@ const useWheel = (data: any[], updateSheet: (id: string) => any) => {
       data.map((item: any) => ({
         text: item.name,
         fillStyle: item.color,
+        textFillStyle: item.text_color,
       })),
     [data]
   );
@@ -25,7 +25,7 @@ const useWheel = (data: any[], updateSheet: (id: string) => any) => {
   const onWheelFinished = useCallback((indicatedSegment: any) => {
     if (indicatedSegment) {
       Swal.fire({
-        title: `Chúc mừng bạn đã trúng 1 ${indicatedSegment.text}`,
+        title: `Chúc mừng bạn đã trúng <br /> 1 ${indicatedSegment.text}`,
         showClass: {
           popup: "animate__animated animate__fadeInDown",
         },
@@ -46,8 +46,9 @@ const useWheel = (data: any[], updateSheet: (id: string) => any) => {
         numSegments: segments.length, // Specify number of segments.
         outerRadius: 212, // Set outer radius so wheel fits inside the background.
         textFontSize: 22, // Set font size as desired.
-        innerRadius: 22,
+        innerRadius: 18,
         responsive: true,
+        textFontFamily: "Calibri",
         segments: segments, // Define segments including colour and text.
         // Specify the animation to use.
         animation: {
