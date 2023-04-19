@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo } from "react";
 import weightedRandom from "../utils/weightedRandom";
 import Swal from "sweetalert2";
-import button from "../assets/images/button_2.png";
 
 let theWheel: any;
 declare let Winwheel: any;
