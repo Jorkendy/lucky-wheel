@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 let theWheel: any;
 declare let Winwheel: any;
+declare let winwheelResize: any;
 
 const useWheel = (data: any[], updateSheet: (id: string) => any) => {
   const segments = useMemo(
@@ -43,9 +44,9 @@ const useWheel = (data: any[], updateSheet: (id: string) => any) => {
     const initializeWheel = () => {
       theWheel = new Winwheel({
         numSegments: segments.length, // Specify number of segments.
-        outerRadius: 212, // Set outer radius so wheel fits inside the background.
-        textFontSize: 22, // Set font size as desired.
-        innerRadius: 18,
+        // outerRadius: 212, // Set outer radius so wheel fits inside the background.
+        textFontSize: 20, // Set font size as desired.
+        innerRadius: 17,
         responsive: true,
         textFontFamily: "Calibri",
         segments: segments, // Define segments including colour and text.
@@ -57,6 +58,7 @@ const useWheel = (data: any[], updateSheet: (id: string) => any) => {
           callbackFinished: onWheelFinished,
         },
       });
+        winwheelResize();
     };
 
     if (segments.length > 0) {
